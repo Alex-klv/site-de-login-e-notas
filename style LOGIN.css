@@ -1,0 +1,154 @@
+/* Estilos básicos para a página */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #4c7faf, #2067e2);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #000;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animação de gradiente */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilos das esferas decorativas */
+.sphere {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 162, 255, 0.4), rgba(183, 187, 199, 0.3));
+    opacity: 0.8;
+    animation: float 7s ease-in-out infinite;
+}
+
+.sphere1 { width: 500px; height: 500px; top: -40%; left: -20%; }
+.sphere2 { width: 690px; height: 690px; top: 55%; left: 70%; }
+.sphere3 { width: 650px; height: 650px; top: 85%; left: -15%; }
+.sphere4 { width: 750px; height: 750px; top: -90%; left: 80%; }
+
+/* Animação de flutuação das esferas */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Centralização do conteúdo principal */
+.container {
+    text-align: center;
+}
+
+/* Estilo do título */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+/* Estilos do formulário */
+form {
+    background-color: #f0f4f8;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    margin: 50px auto;
+    text-align: left;
+    position: relative;
+    animation: popIn 0.8s ease forwards;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animação de entrada do formulário */
+@keyframes popIn {
+    0% { transform: scale(0.9) translateY(20px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+form:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos dos labels e inputs */
+form label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input[type="text"], form input[type="password"] {
+    width: 92%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus, form input[type="password"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Estilos do botão de envio */
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.02);
+}
+
+/* Estilo do link "esqueci minha senha" */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #0d0d0d;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Aplicando a animação no título e no parágrafo */
+h1, p {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.3s; /* Atraso para um efeito mais suave */
+}
+
+p {
+    animation-delay: 0.5s; /* Atraso adicional para o parágrafo */
+}
